@@ -584,7 +584,7 @@
         files_data.forEach((val => {
             if (val.id === handlElement) {
                 console.log(currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild);
-                currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild.innerHTML = '<div>srvervb</div>'
+                currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild.textContent = 'esfgesg'
             }
         }));
     }));
