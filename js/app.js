@@ -582,7 +582,7 @@
         const handlElement = currentPopup.previousActiveElement.firstElementChild.id;
         console.log(handlElement);
         files_data.forEach((val => {
-            if (val.id === handlElement) {
+            if (val.id == handlElement) {
                 console.log(currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild);
                 currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild.textContent = 'esfgesg'
             }
