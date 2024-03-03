@@ -580,7 +580,7 @@
         const handlElement = currentPopup.previousActiveElement.firstElementChild.id;
         console.log(handlElement);
         data.forEach((val => {
-            if (val.id == handlElement) {
+            if (val.id  === Number(handlElement)) {
                 console.log(currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild);
                 currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild.textContent = val.description + ',' + val.name + val.id
             }
