@@ -552,7 +552,7 @@
         const boxSpring = document.querySelector("#tasks-spring");
         const boxAutumn = document.querySelector("#tasks-autumn");
         data.map((value => {
-            const seasonRender = box => box.insertAdjacentHTML("beforeend", `<a href="#" data-popup="#popup">\n            <div id="${value.id}" class="taskItem ${value.season}">\n                <div>\n                <img src = "./img/empatia_logo2.svg" alt="">\n                </div>\n                <div class="taskItem__value">${value.id}</div>\n            </div>\n        </a>`);
+            const seasonRender = box => box.insertAdjacentHTML("beforeend", `<a href="#" id="${value.id}" data-popup="#popup">\n            <div  class="taskItem ${value.season}">\n                <div>\n                <img src = "./img/empatia_logo2.svg" alt="">\n                </div>\n                <div class="taskItem__value">${value.id}</div>\n            </div>\n        </a>`);
             switch (value.season) {
               case "winter":
                 seasonRender(boxWinter);
@@ -583,7 +583,7 @@
     info.textContent = 'ewg'
         const currentPopup = e.detail.popup;
         const handlElement = currentPopup.previousActiveElement.firstElementChild.id;
-        currentPopup.targetOpen.element.querySelector('.popup__text').textContent = currentPopup.previousActiveElement.firstElementChild.id
+        currentPopup.targetOpen.element.querySelector('.popup__text').textContent = currentPopup.previousActiveElement.id
         const pop = data.find((val) => {
         return val.id === Number(handlElement)
             
