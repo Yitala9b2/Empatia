@@ -574,7 +574,11 @@
                 break;
             }
         }));
-            document.addEventListener("beforePopupOpen", (function(e) {
+
+    }
+    renderTasks();
+    window.addEventListener("load", function () {
+                document.addEventListener("beforePopupOpen", (function(e) {
         const currentPopup = e.detail.popup;
         console.log(currentPopup);
         const handlElement = currentPopup.previousActiveElement.firstElementChild.id;
@@ -586,9 +590,7 @@
             }
         }));
     }));
-    }
-    renderTasks();
-
+})
     window.FontAwesomeKitConfig = {
         asyncLoading: {
             enabled: false
