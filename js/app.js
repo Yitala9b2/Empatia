@@ -578,19 +578,21 @@
     }
     renderTasks();
 
-                document.addEventListener("beforePopupOpen", (function(e) {
-                        const info = document.querySelector('.information');
+    document.addEventListener("beforePopupOpen", (function(e) {
+    const info = document.querySelector('.information');
     info.textContent = 'ewg'
         const currentPopup = e.detail.popup;
-        console.log(currentPopup);
         const handlElement = currentPopup.previousActiveElement.firstElementChild.id;
-        console.log(handlElement);
-        return data.find((val => {
-            if (val.id  === Number(handlElement)) {
-                info.textContent= val.id
-                return currentPopup.targetOpen.element.querySelector('.popup__text').textContent = val.description + ',' + val.name + val.id
-            }
-        }));
+        const pop = data.find((val) => {
+        return val.id === Number(handlElement)
+        //if (val.id === Number(handlElement)) {
+        //    info.textContent= val.id
+        //    currentPopup.targetOpen.element.querySelector('.popup__text').textContent = val.description + ',' + val.name + val.id
+        //}
+    })
+        if (pop) {
+        currentPopup.targetOpen.element.querySelector('.popup__text').textContent = pop.description + ',' + pop.name + pop.id
+    } 
     }));
 
     window.FontAwesomeKitConfig = {
