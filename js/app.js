@@ -582,7 +582,7 @@
         data.forEach((val => {
             if (val.id  === Number(handlElement)) {
                 console.log(currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild);
-                currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild.textContent = val.description + ',' + val.name + val.id
+                currentPopup.targetOpen.element.querySelector('.popup__text').textContent = val.description + ',' + val.name + val.id
             }
         }));
     }));
