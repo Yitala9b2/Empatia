@@ -583,8 +583,10 @@
     info.textContent = 'ewg'
         const currentPopup = e.detail.popup;
         const handlElement = currentPopup.previousActiveElement.firstElementChild.id;
+        currentPopup.targetOpen.element.querySelector('.popup__text').textContent = 'контент'
         const pop = data.find((val) => {
         return val.id === Number(handlElement)
+            
         //if (val.id === Number(handlElement)) {
         //    info.textContent= val.id
         //    currentPopup.targetOpen.element.querySelector('.popup__text').textContent = val.description + ',' + val.name + val.id
