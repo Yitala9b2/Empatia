@@ -579,11 +579,11 @@
     renderTasks();
 
     document.addEventListener("beforePopupOpen", (function(e) {
-    const info = document.querySelector('.information');
-    info.textContent = 'ewg'
+    // const info = document.querySelector('.information');
+    // info.textContent = 'ewg'
         const currentPopup = e.detail.popup;
-        const handlElement = currentPopup.previousActiveElement.firstElementChild.id;
-        currentPopup.targetOpen.element.querySelector('.popup__text').textContent = currentPopup.lastFocusEl.id
+        const handlElement = currentPopup.lastFocusEl.id;
+        // currentPopup.targetOpen.element.querySelector('.popup__text').textContent = currentPopup.lastFocusEl.id
         const pop = data.find((val) => {
         return val.id === Number(handlElement)
             
@@ -593,7 +593,7 @@
         //}
     })
         if (pop) {
-            info.textContent = pop.description
+            // info.textContent = pop.description
         currentPopup.targetOpen.element.querySelector('.popup__text').textContent = pop.description + ',' + pop.name + pop.id
     } 
     }));
