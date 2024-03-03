@@ -585,10 +585,10 @@
         console.log(currentPopup);
         const handlElement = currentPopup.previousActiveElement.firstElementChild.id;
         console.log(handlElement);
-        data.forEach((val => {
+        return data.find((val => {
             if (val.id  === Number(handlElement)) {
                 console.log(currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild);
-                currentPopup.targetOpen.element.querySelector('.popup__text').textContent = val.description + ',' + val.name + val.id
+                return currentPopup.targetOpen.element.querySelector('.popup__text').textContent = val.description + ',' + val.name + val.id
             }
         }));
     }));
