@@ -577,8 +577,10 @@
 
     }
     renderTasks();
-    window.addEventListener("load", function () {
+
                 document.addEventListener("beforePopupOpen", (function(e) {
+                        const info = document.querySelector('.information');
+    info.textContent = 'ewg'
         const currentPopup = e.detail.popup;
         console.log(currentPopup);
         const handlElement = currentPopup.previousActiveElement.firstElementChild.id;
@@ -590,7 +592,7 @@
             }
         }));
     }));
-})
+
     window.FontAwesomeKitConfig = {
         asyncLoading: {
             enabled: false
