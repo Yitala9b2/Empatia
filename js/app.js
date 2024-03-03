@@ -591,6 +591,7 @@
         //}
     })
         if (pop) {
+            info.textContent = pop.description
         currentPopup.targetOpen.element.querySelector('.popup__text').textContent = pop.description + ',' + pop.name + pop.id
     } 
     }));
