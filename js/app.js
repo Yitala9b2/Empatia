@@ -551,7 +551,7 @@
         const boxSummer = document.querySelector("#tasks-summer");
         const boxSpring = document.querySelector("#tasks-spring");
         const boxAutumn = document.querySelector("#tasks-autumn");
-        files_data.map((value => {
+        data.map((value => {
             const seasonRender = box => box.insertAdjacentHTML("beforeend", `<a href="#" data-popup="#popup">\n            <div id="${value.id}" class="taskItem ${value.season}">\n                <div>\n                <img src = "./img/empatia_logo2.svg" alt="">\n                </div>\n                <div class="taskItem__value">${value.id}</div>\n            </div>\n        </a>`);
             switch (value.season) {
               case "winter":
@@ -574,20 +574,21 @@
                 break;
             }
         }));
-    }
-    renderTasks();
-    document.addEventListener("beforePopupOpen", (function(e) {
+            document.addEventListener("beforePopupOpen", (function(e) {
         const currentPopup = e.detail.popup;
         console.log(currentPopup);
         const handlElement = currentPopup.previousActiveElement.firstElementChild.id;
         console.log(handlElement);
-        files_data.forEach((val => {
+        data.forEach((val => {
             if (val.id == handlElement) {
                 console.log(currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild);
-                currentPopup.targetOpen.element.firstElementChild.firstElementChild.style.backgroundColor = 'red'
+                currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild.textContent = val.description + ',' + val.name + val.id
             }
         }));
     }));
+    }
+    renderTasks();
+
     window.FontAwesomeKitConfig = {
         asyncLoading: {
             enabled: false
