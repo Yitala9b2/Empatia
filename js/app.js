@@ -587,7 +587,7 @@
         console.log(handlElement);
         return data.find((val => {
             if (val.id  === Number(handlElement)) {
-                console.log(currentPopup.targetOpen.element.firstElementChild.firstElementChild.lastElementChild);
+                info.textContent= val.id
                 return currentPopup.targetOpen.element.querySelector('.popup__text').textContent = val.description + ',' + val.name + val.id
             }
         }));
